@@ -37,9 +37,9 @@ jobs:
         run: docker pull toluaaron/swiggy_app:latest
       - name: Image scan
         run: trivy image toluaaron/swiggy_app:latest > trivyimagedeploy.txt
-      - name: Deploy to container
-        run: docker run -d --name swiggy_app -p 3000:3000 toluaaron/swiggy_app:latest
+     # - name: Deploy to container
+      #  run: docker run -d --name swiggy_app -p 3000:3000 toluaaron/swiggy_app:latest
       - name: Update kubeconfig
         run: aws eks --region us-east-1 update-kubeconfig --name EKS_CLOUD
       - name: Deploy to kubernetes
-        run: kubectl apply -f deployment-service.yml2. commit the changes and this will deploy the image locally on the base server
+        run: kubectl apply -f deployment-service.yml #2. commit the changes and this will deploy the image locally on the base server
